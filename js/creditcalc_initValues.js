@@ -1,0 +1,35 @@
+export const values = {
+  programRate: {
+    base: 0.12,
+    it: 0.047,
+    gov: 0.067,
+    zero: 0.108,
+  },
+  cost: {
+    min: 400000,
+    medium: 10000000,
+    max: 100000000,
+    defaultValue: 12000000,
+    stepLow: 100000,
+    stepHigh: 1000000,
+    labelMin: "400 тыс. ₽",
+    labelMedium: "| 10 млн ₽",
+    labelMax: "100 млн ₽",
+  },
+  downpayment: {
+    minRate: 0.15,
+    maxRate: 0.9,
+    defaultValue: 4000000,
+    step: 100000,
+    labelMin: "15%",
+    labelMax: "90%",
+  },
+  term: {
+    min: 1,
+    max: 30,
+    defaultValue: 10,
+    step: 1,
+    labelMin: "1 год",
+    labelMax: "30 лет",
+  },
+};

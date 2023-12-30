@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кредитный калькулятор</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+
+  <link rel="stylesheet" href="libs/noUiSlider/nouislider.css" />
+
+  <body class="content-grid">
+    <section class="py-section">
+      <h1 class="title-h1">Кредитный калькулятор</h1>
+      <div class="mt-5 grid grid-cols-3 gap-10 lg:gap-6 sm:grid-cols-1">
+        <form class="col-span-2" id="form">
+          <div
+            class="flex flex-wrap gap-1 [&>:checked+label]:cursor-default [&>:checked+label]:border-primary-800 [&>:checked+label]:bg-primary-800 [&>:checked+label]:text-white"
+          >
+            <input
+              type="radio"
+              name="program"
+              value="base"
+              id="base-value"
+              class="hidden"
+              checked
+            />
+            <label
+              class="cursor-pointer rounded-lg border border-base-300 px-2 py-1"
+              for="base-value"
+            >
+              Базовая программа <span></span>
+            </label>
+
+            <input
+              type="radio"
+              name="program"
+              value="it"
+              id="it-value"
+              class="hidden"
+            />
+            <label
+              class="cursor-pointer rounded-lg border border-base-300 px-2 py-1"
+              for="it-value"
+            >
+              Ипотека для IT <span></span>
+            </label>
+
+            <input
+              type="radio"
+              name="program"
+              value="gov"
+              id="gov-value"
+              class="hidden"
+            />
+            <label
+              class="cursor-pointer rounded-lg border border-base-300 px-2 py-1"
+              for="gov-value"
+            >
+              Господдержка <span></span>
+            </label>
+
+            <input
+              type="radio"
+              name="program"
+              value="zero"
+              id="zero-value"
+              class="hidden"
+            />
+            <label
+              class="cursor-pointer rounded-lg border border-base-300 px-2 py-1"
+              for="zero-value"
+            >
+              Без первоначального взноса <span></span>
+            </label>
+          </div>
+
+          <div class="mt-6 grid gap-4">
+            <label>
+              <div class="param-details rounded-lg border border-base-300">
+                <div class="px-2 py-1">
+                  <p class="text-tertiary-color">Стоимость недвижимости</p>
+                  <input
+                    type="text"
+                    id="input-cost"
+                    class="no-style mt-0.5 bg-transparent text-xl outline-none"
+                  />
+                </div>
+                <div id="slider-cost"></div>
+              </div>
+              <div class="mt-1 flex justify-between text-tertiary-color">
+                <p id="min-cost"></p>
+                <p id="medium-cost"></p>
+                <p id="max-cost"></p>
+              </div>
+            </label>
+
+            <label>
+              <div class="param-details rounded-lg border border-base-300">
+                <div class="px-2 py-1">
+                  <p class="text-tertiary-color">Первоначальный взнос</p>
+                  <input
+                    type="text"
+                    id="input-downpayment"
+                    class="no-style mt-0.5 bg-transparent text-xl outline-none"
+                  />
+                </div>
+                <div id="slider-downpayment"></div>
+              </div>
+              <div class="mt-1 flex justify-between text-tertiary-color">
+                <p id="min-downpayment-rate"></p>
+                <p id="max-downpayment-rate"></p>
+              </div>
+            </label>
+
+            <label>
+              <div class="param-details rounded-lg border border-base-300">
+                <div class="px-2 py-1">
+                  <p class="text-tertiary-color">Срок кредита</p>
+                  <input
+                    type="number"
+                    id="input-term"
+                    class="no-style mt-0.5 bg-transparent text-xl outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                  />
+                </div>
+                <div id="slider-term"></div>
+              </div>
+              <div class="mt-1 flex justify-between text-tertiary-color">
+                <p id="min-term"></p>
+                <p id="max-term"></p>
+              </div>
+            </label>
+          </div>
+        </form>
+
+        <div class="grid h-fit gap-4">
+          <div>
+            <p class="text-secondary-color">Ежемесячный платёж</p>
+            <p class="mt-1 text-2xl font-bold" id="total-month-payment">ХХХХ</p>
+          </div>
+          <div>
+            <p class="text-secondary-color">Процентная ставка</p>
+            <p
+              class="mt-1 text-2xl font-bold text-primary-800"
+              id="total-percent"
+            >
+              ХХХХ
+            </p>
+          </div>
+          <div>
+            <p class="text-secondary-color">Сумма кредита</p>
+            <p class="mt-1 text-2xl font-bold" id="total-cost">ХХХХ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="libs/cleave/cleave.min.js"></script>
+    <script src="libs/noUiSlider/nouislider.min.js"></script>
+
+    <script src="js/creditcalc_formatters.js" type="module"></script>
+    <script src="js/creditcalc_initValues.js" type="module"></script>
+    <script src="js/creditcalc_DOMparameters.js" type="module"></script>
+    <script src="js/creditcalc_formatInputs.js" type="module"></script>
+  </body>
+</html>
